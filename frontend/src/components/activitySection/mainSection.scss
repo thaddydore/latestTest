@@ -1,0 +1,19 @@
+.biosec__management__sytsem__section {
+  width: 100%;
+ max-width: 80%;
+ margin: 0 auto;
+  margin-top: calc(0.75rem + 0.75vw);
+
+	&--heading {
+		font-family: Inter;
+		font-style: normal;
+		font-weight: bold;
+		font-size: calc(0.75rem + 0.75vw);
+		line-height: 29px;
+		display: flex;
+		align-items: center;
+		color: #080e1c;
+    text-align: center;
+      margin-bottom: calc(0.75rem + 0.75vw);
+	}
+}

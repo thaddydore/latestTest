@@ -1,0 +1,50 @@
+nav.navbar {
+  background: #ffffff;
+  box-shadow: 20px 12px 20px rgba(233, 233, 233, 0.25);
+  padding: 1vh 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar__notification {
+    position: relative;
+  }
+
+  .navbar__notification--new-notification-alert {
+    position: absolute;
+    border: 0.1rem solid #fff;
+    left: 13px;
+    top: 5px;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  .dropdown {
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    width: 90px;
+    justify-content: space-evenly;
+  }
+
+  .navbar--avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  .navbar__logo-container {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
