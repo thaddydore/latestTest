@@ -90,7 +90,7 @@ const UpdateEmployee = ({
       <Modal.Footer className='add-footer'>
         <button className='btn-cancel' onClick={handleClose}>cancel</button>
         <button className='btn-send' form='create-employee'>
-          {send ? 'Creating...' : 'Create'}
+          {send ? 'Updating...' : 'Update'}
         </button>
       </Modal.Footer>
     </Modal>
