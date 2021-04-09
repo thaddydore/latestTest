@@ -1,0 +1,127 @@
+.biosec__management__sytsem__create__employee__modal {
+
+  &--title {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-transform: capitalize;
+    color: #1C1919;
+    border-bottom: 0.5px solid #CCCCCC;
+    padding-bottom: 1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .add-labels {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    color: #1C1919;
+    margin-bottom: .5rem;
+  }
+
+  .add-inputs {
+    background: #F9F9F9;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    margin-bottom: .8rem;
+  }
+
+  .btn-add-more {
+    padding: 0.3rem 0.6rem;
+    background: rgba(217, 32, 42, 0.05);
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    color: #D9202A;
+  }
+
+  .add-footer {
+    background: #FBFBFB;
+  }
+
+  .btn-send {
+    background:  #9E59B0;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+  }
+
+  .btn-cancel {
+    background: #FBFBFB;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color:  #9E59B0;
+    border: none;
+    outline: none;
+  }
+
+  .modal-sz {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 3px;
+    background: #ffffff;
+  }
+
+  .icon-wrapper {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #27AE60;
+    color: #FFFFFF;
+  }
+
+  .success {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: #1C1919;
+    margin-bottom: 0.3125rem;
+  }
+
+  .response {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    color: #342C34;
+  }
+
+   .admin-name-email {
+    background: #FBFBFB;
+    border-radius: 3px;
+    margin-bottom: .8rem;
+  }
+  .remove {
+    color: #D9202A;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .warning-text {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: #342C34;
+  }
+}

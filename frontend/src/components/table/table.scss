@@ -1,0 +1,51 @@
+.biosec__management__sytsem--table {
+	& thead {
+		background: #f5f5f5;
+		border-radius: 8px;
+
+		& tr th {
+			font-family: Inter;
+			font-style: normal;
+			font-weight: 500;
+			font-size: calc(0.4375rem + 0.4375vw);
+			line-height: 17px;
+			letter-spacing: 0.002em;
+			text-transform: uppercase;
+			color: #343a40;
+		}
+	}
+
+	& tbody tr td {
+		font-family: Inter;
+		font-style: normal;
+		font-weight: normal;
+		font-size: calc(0.5rem + 0.5vw);
+		line-height: 19px;
+		color: #4f4f4f;
+
+		& img {
+			height: calc(1.25rem + 1.25vw);
+			width: calc(1.25rem + 1.25vw);
+			object-fit: contain;
+			margin-right: calc(0.5rem + 0.5vw);
+		}
+
+		& button {
+			background: #9e59b0;
+			border-radius: 4px;
+			padding: 0.3rem 0.6rem;
+			font-family: Gilroy;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 1rem;
+			text-transform: capitalize;
+			color: #ffffff;
+			border: none;
+			outline: none;
+		}
+	}
+
+	& tbody td:nth-child(1) {
+		color: #080e1c;
+	}
+}
