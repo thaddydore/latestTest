@@ -12,15 +12,12 @@ const CreateEmployee = ({
   handleChange,
 }) => {
 
-
   // get all administrator roles and id as option value and name
   const filterOptions = roles && roles.map(role => (
     <option value={role.id}>{role.name}</option>
   ));
 
-
   return (
-
     <> <Modal
       show={show}
       onHide={handleClose}
