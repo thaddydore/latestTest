@@ -1,0 +1,24 @@
+{
+  "name": "latesttest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js",
+    "server": "nodemon --watch server server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onyekachi-Chidiebere/biosec-technical-assessment.git"
+  },
+  "author": "Onyekachi Chidiebere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onyekachi-Chidiebere/biosec-technical-assessment/issues"
+  },
+  "homepage": "https://github.com/Onyekachi-Chidiebere/biosec-technical-assessmentt#readme",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

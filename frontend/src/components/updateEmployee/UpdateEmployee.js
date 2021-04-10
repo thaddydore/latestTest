@@ -1,24 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState, useReducer } from 'react';
 import { Modal } from 'react-bootstrap';
+import { position } from '../../data/positions';
 
 import './updateEmployee.scss'
 
 const UpdateEmployee = ({
+  employee,
   show,
   handleClose,
-  roles,
   send,
-  createAdmin,
-  handleChange,
 }) => {
 
-
-  // get all administrator roles and id as option value and name
-  const filterOptions = roles && roles.map(role => (
-    <option value={role.id}>{role.name}</option>
+  const filterOptions = position && position.map(position => (
+    <option value={position.name}>{position.name}</option>
   ));
 
+  const [error, setError] = useState(false);
+  const [employeeData, setEmployeeData] = useReducer((state, nextState) => ({ ...state, ...nextState }),
+    employee);
 
+  const updateEmployee = async (e) => {
+    let url = '/employee_api/employee';
+    try {
+      e.preventDefault();
+      setError(false);
+      const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({employeeData}),
+      })
+      if (response.statusText == 'OK') {
+
+        return setEmployeeData({
+          fullname: '',
+          email: '',
+          phone: '',
+          position: '',
+          employmentDate: '',
+        });
+
+      }
+      let message = await response.text()
+      setError(message)
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    setEmployeeData({ [name]: value });
+  }
+  useEffect(() => {
+    console.log({ employee })
+    setEmployeeData(employee);
+    console.log({ employeeData })
+  }, [employee])
   return (
 
     <> <Modal
@@ -34,13 +75,16 @@ const UpdateEmployee = ({
       >
 
         <h1 className='biosec__management__sytsem__create__employee__modal--title'>Update Employee</h1>
-        <form className='p-0' onSubmit={createAdmin} id='create-employee'>
+        <form className='p-0' onSubmit={updateEmployee} id='create-employee'>
+          <div className='d-flex flex-column'>
+            {error && <i style={{ color: 'red' }}>{error}</i>}
+          </div>
           <div className='d-flex flex-column'>
             <label className='add-labels'>Full Name</label>
             <input
               type='text'
-              name='firstName'
-              value={''}
+              name='fullname'
+              value={employeeData.fullname}
               className='add-inputs p-1'
               onChange={handleChange}
             />
@@ -50,8 +94,8 @@ const UpdateEmployee = ({
             <label className='add-labels'>Date of Employment</label>
             <input
               type='date'
-              name='lastName'
-              value={''}
+              name='employmentDate'
+              value={employeeData.employmentDate}
               className='add-inputs p-1'
               onChange={handleChange}
             />
@@ -60,9 +104,9 @@ const UpdateEmployee = ({
           <div className='d-flex flex-column'>
             <label className='add-labels'>Phone Number</label>
             <input
-              type='tel'
-              name='userName'
-              value={''}
+              type='number'
+              name='phone'
+              value={employeeData.phone}
               className='add-inputs p-1'
               onChange={handleChange}
             />
@@ -71,16 +115,17 @@ const UpdateEmployee = ({
           <div className='d-flex flex-column'>
             <label className='add-labels'>Email</label>
             <input
+              disabled
               type='email'
               name='email'
-              value={''}
+              value={employeeData.email}
               className='add-inputs p-1'
               onChange={handleChange}
             />
           </div>
           <div className='d-flex flex-column'>
             <label className='add-labels'>Assign role</label>
-            <select className='add-inputs p-1' onChange={handleChange} name='roleId' value={''}>
+            <select className='add-inputs p-1' onChange={handleChange} name='position' value={employeeData.position}>
               <option value=''></option>
               {filterOptions}
             </select>
@@ -90,7 +135,7 @@ const UpdateEmployee = ({
       <Modal.Footer className='add-footer'>
         <button className='btn-cancel' onClick={handleClose}>cancel</button>
         <button className='btn-send' form='create-employee'>
-          {send ? 'Updating...' : 'Update'}
+          {send ? 'Updatinging...' : 'Update'}
         </button>
       </Modal.Footer>
     </Modal>

@@ -10,6 +10,7 @@ const MainSection = () => {
 
   const [showCreateEmplyeeModal, setShowCreateEmployeeModal] = useState(false);
   const [showEditEmplyeeModal, setShowEditEmployeeModal] = useState(false);
+  const [editEmployee, setEditEmployee]=useState({});
 
   const showCreateModal = () => {
     setShowCreateEmployeeModal(true);
@@ -30,7 +31,7 @@ const MainSection = () => {
   return (
     <div className='biosec__management__sytsem__section'>
       <h2 className='biosec__management__sytsem__section--heading'>Employed Staff</h2>
-      <Table showEditModal={showEditModal} />
+      <Table showEditModal={showEditModal} setEditEmployee={setEditEmployee}/>
       <CreateEmployee
         show={showCreateEmplyeeModal}
         handleClose={closeCreateModal}
@@ -39,6 +40,7 @@ const MainSection = () => {
       <UpdateEmployee
         show={showEditEmplyeeModal}
         handleClose={closeEditeModal}
+        employee={editEmployee}
       />
     </div>
   );
